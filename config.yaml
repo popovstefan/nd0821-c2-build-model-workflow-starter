@@ -5,6 +5,10 @@ main:
   project_name: nyc_airbnb
   experiment_name: development
   steps: all
+download:
+  artifact_name: "sample.csv"
+  artifact_type: "raw_data"
+  artifact_description: "Raw file as downloaded"
 etl:
   sample: "sample1.csv"
   min_price: 10  # dollars
@@ -15,6 +19,8 @@ etl:
   input_artifact: "sample.csv:latest"
 data_check:
   kl_threshold: 0.2
+  csv: "clean_sample.csv:latest"
+  ref: "clean_sample.csv:reference"
 modeling:
   # Fraction of data to use for test (the remaining will be used for train and validation)
   test_size: 0.2
