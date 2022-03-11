@@ -22,6 +22,7 @@ data_check:
   csv: "clean_sample.csv:latest"
   ref: "clean_sample.csv:reference"
 modeling:
+  output_artifact: "random_forest_export"
   # Fraction of data to use for test (the remaining will be used for train and validation)
   test_size: 0.2
   # Fraction of remaining data to use for validation
